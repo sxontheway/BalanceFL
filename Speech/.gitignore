@@ -1,0 +1,4 @@
+*.pyc
+exp_results/
+fetched_data/
+*.pth

@@ -1,0 +1,66 @@
+# Ours for CIFAR10
+
+fl_opt:
+  rounds: 200
+  num_clients: 10   
+  frac: 1       # the fraction of clients in each FL round
+  local_ep: 5       # local epoch
+  local_bs: 64       # local batch size
+  aggregation: fedavg  # fedavg, fedavgm, fedbn, fedprox
+  balanced_loader: false
+  feat_aug: false
+
+  # previously tried but not used 
+  # to enable, should first set /fl_opt/aggregation == fedavg_fs
+  backbone_only: false
+  imprint: false
+  spread_out: false
+  crt: false
+
+
+criterions:
+  # CE Loss
+  def_file: ./loss/KDLoss.py
+  loss_params: {Temp: 2, lamda: 0, loss_cls: ce, loss_kd: kl}   # lambda=0 means comman CE Loss
+
+
+networks:
+  feat_model:
+    # CUB: ResNet34/18/10-512d, ResNet10h-256d, ResNet10s-192d; CIFAR: ResNet32/20/8-512/256/128d
+    def_file: ResNet8
+    params: {dropout: null, stage1_weights: false, use_fc: false, pretrain: false, l2_norm: false}
+    optim_params: {lr: 0.005, momentum: 0.9, weight_decay: 0.0001}
+    feat_dim: 512
+    fix: false
+  classifier:   # if l2_norm is true，bias should be false
+    def_file: ./models/DotProductClassifier.py
+    params: {num_classes: 35, l2_norm: false, bias: False, scale: 1}  
+    optim_params: {lr: 0.005, momentum: 0.9, weight_decay: 0.0001}  
+    fix: false
+    
+
+dataset:
+  name: Speech
+  # shot: 1000
+  shot_few: 0   # if shot_few>0, (iid + non-iid) mixed mode; else, non-mixed mode
+  num_classes: 35
+  non_iidness: 1
+  tao_ratio: 2
+  imb_ratio: 0.01   # 0.1, 0.5, 1 for 10, 2, 1
+  img_per_client_dist: uniform   # (uniform, noraml, longtail, r_longtail）
+  prefetch: false    # load the whole dataset into RAM
+
+
+metainfo:
+  optimizer: adam
+  display_step: 10
+  display_grad: False
+  display_grad_step: 10
+  work_dir: ./exp_results
+  exp_name: test
+  log_dir: ./exp_results/test   # log_dir = work_dir + exp_name
+
+
+checkpoint:
+  joint: checkpoints/alljoint_best_10.pth
+

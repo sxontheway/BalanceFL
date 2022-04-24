@@ -1,0 +1,9 @@
+*.pyc
+*.pth
+*.pt
+# *.ipynb
+*.sh
+*.png
+*.jpg
+runs_exp/
+__pycache__/
