@@ -8,7 +8,7 @@ This is the repo for IPSN 2022 paper: "BalanceFL: Addressing Class Imbalance in 
 BalanceFL is a long-tailed federated learning framework
 that can robustly learn both common and rare classes from a real-world dataset, simultaneously addressing the global and local data imbalance problems. 
 
-It mainly includes two techniques: knowledge inheritance and inter-class balancing. Please refer to our paper for more details. 
+BalanceFL mainly includes two components: knowledge inheritance and inter-class balancing. They address the class missing issue and the local class imbalance issue, respectively. 
 
 <br>
 
@@ -30,21 +30,22 @@ The program has been tested in the following environment:
 # Project Structure
 ## Datasets
 In Total, the evaluation involves three datasets. Each folder contains the code of one dataset.   
-CIFAR10 and Speech Command are public datasets, while our collected IMU dataset is available in `./dataset/IMU/`.
-
 <p align="center" >
 	<img src="./figures/dataset.png" width="500">
 </p>
 
+* CIFAR10 and Speech Command are two public datasets, which will be automatically downloaded by running the related code. 
+* Our collected IMU dataset is available in `./dataset/IMU/`.
+
 ## BalanceFL and and six baselines
 quick start: run `python3 XXX.py`
 * `train_ours.py`: ours  
-* `train_central_bal.py`: centralized training with balanced softmax  
+* `train_central_bal.py`: centralized training with balanced softmax (Balanced Meta-Softmax for Long-Tailed Visual Recognition)
 * `train_central.py`: naive centralized training  
-* `train_fedavg.py`: fedavg  
-* `train_fedprox.py`: fedprox  
-* `train_local.py`: local training  
-* `train_per.py`: Per-FedAvg    
+* `train_fedavg.py`: FedAvg  
+* `train_fedprox.py`: FedProx  
+* `train_local.py`: Local Training  
+* `train_per.py`: Per-FedAvg 
 
 <br>
 
