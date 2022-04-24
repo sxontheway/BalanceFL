@@ -1,5 +1,14 @@
 # BalanceFL
-This is the repo for IPSN 2022 paper: "BalanceFL: Addressing Class Imbalance in Long-Tail Federated Learning".
+<p align="center" >
+	<img src="./figures/balancefl.jpg" width="800">
+</p>
+
+This is the repo for IPSN 2022 paper: "BalanceFL: Addressing Class Imbalance in Long-Tail Federated Learning".  
+
+BalanceFL is a long-tailed federated learning framework
+that can robustly learn both common and rare classes from a real-world dataset, simultaneously addressing the global and local data imbalance problems. 
+
+It mainly includes two techniques: knowledge inheritance and inter-class balancing. Please refer to our paper for more details. 
 
 <br>
 
@@ -18,18 +27,8 @@ The program has been tested in the following environment:
 
 <br>
 
-# Overview
-<p align="center" >
-	<img src="./figures/balancefl.jpg" width="800">
-</p>
-
-BalanceFL is a long-tailed federated learning framework
-that can robustly learn both common and rare classes from a real-world dataset, simultaneously addressing the global and local data imbalance problems. 
-
-It mainly include to techniques: knowledge inheritance and inter-class balancing. Please refer to our paper for more details. 
-
-## Project Structure
-### Datasets
+# Project Structure
+## Datasets
 In Total, the evaluation involves three datasets. Each folder contains the code of one dataset.   
 CIFAR10 and Speech Command are public datasets, while our collected IMU dataset is available in `./dataset/IMU/`.
 
@@ -37,7 +36,7 @@ CIFAR10 and Speech Command are public datasets, while our collected IMU dataset 
 	<img src="./figures/dataset.png" width="500">
 </p>
 
-### BalanceFL and and six baselines
+## BalanceFL and and six baselines
 quick start: run `python3 XXX.py`
 * `train_ours.py`: ours  
 * `train_central_bal.py`: centralized training with balanced softmax  
