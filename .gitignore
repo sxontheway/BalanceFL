@@ -3,7 +3,7 @@
 *.pt
 # *.ipynb
 *.sh
-*.png
-*.jpg
+# *.png
+# *.jpg
 runs_exp/
 __pycache__/
