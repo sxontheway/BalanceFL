@@ -52,7 +52,14 @@ quick start: run `python3 XXX.py`
 # Citation
 The dataset included in this repository is for non-commericial use. Please cite our work if you feel our work is helpful or use our collected IMU dataset:
 ```
-Xian Shuai, Yulin Shen, Siyang Jiang, Zhihe Zhao, Zhenyu Yan, and Guoliang Xing. 2021. Balancefl: Addressing class imbalance in long-tail federated learning. In Proceedings of the International Conference on Information Processing in Sensor Networks (IPSN ’22), Milan, Italy.
+@inproceedings{Shuai2022BalanceFL,
+  author={Shuai, Xian and Shen, Yulin and Jiang, Siyang and Zhao, Zhihe and Yan, Zhenyu and Xing, Guoliang}
+  title={BalanceFL: Addressing Class Imbalance in Long-Tail Federated Learning},
+  booktitle = {ACM International Conference on Information Processing in Sensor Networks (IPSN)},
+  year = 2022,
+  month = {May},
+  address = {Milan, Italy}
+}
 ```
 
 
