@@ -52,15 +52,14 @@ quick start: run `python3 XXX.py`
 # Citation
 The dataset included in this repository is for non-commericial use. Please cite our work if you feel our work is helpful or use our collected IMU dataset:
 ```
-@inproceedings{Shuai2022BalanceFL,
-  author={Shuai, Xian and Shen, Yulin and Jiang, Siyang and Zhao, Zhihe and Yan, Zhenyu and Xing, Guoliang}
-  title={BalanceFL: Addressing Class Imbalance in Long-Tail Federated Learning},
-  booktitle = {ACM International Conference on Information Processing in Sensor Networks (IPSN)},
-  year = 2022,
-  month = {May},
-  address = {Milan, Italy}
-}
+@INPROCEEDINGS{9825928,
+  author={Shuai, Xian and Shen, Yulin and Jiang, Siyang and Zhao, Zhihe and Yan, Zhenyu and Xing, Guoliang},
+  booktitle={2022 21st ACM/IEEE International Conference on Information Processing in Sensor Networks (IPSN)}, 
+  title={BalanceFL: Addressing Class Imbalance in Long-Tail Federated Learning}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={271-284},
+  doi={10.1109/IPSN54338.2022.00029}}
+
 ```
-
-
-
